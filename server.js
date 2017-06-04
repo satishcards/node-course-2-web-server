@@ -3,7 +3,7 @@ const fs=require('fs');
 const hbs=require('hbs');
 hbs.registerPartials(__dirname+'/partials');
 var app=express();
-
+const port=process.env.PORT || 3000;
 app.set('view engine','hbs');
 app.use((request,response,next)=>{
 
@@ -61,6 +61,6 @@ app.use((request,response,next)=>{
         });
    
  });
- app.listen(3000,()=>{
-     console.log('Server Listening On port 3000');
+ app.listen(port,()=>{
+     console.log(`Server Listening On port ${port}`);
  });
